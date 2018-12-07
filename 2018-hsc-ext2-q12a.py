@@ -26,7 +26,7 @@ FreeCADGui.Snapper.setGrid()
 face_colour = (0.0,0.85,0.75)
 line_colour = (0.1,0.3,0.3)
 
-scale = 5.0 # 1unit = 10mm
+scale = 10.0 # 1unit = 10mm
 
 ######## Axes ##########
 axes = doc.addObject("App::DocumentObjectGroup","Axes")
