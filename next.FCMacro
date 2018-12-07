@@ -1,0 +1,8 @@
+#Use this to create a button and keyboard shortcut that steps through the views
+#In freecad, see Edit -> Preferences, General -> Macro, find the macro path and save this file there
+#Tools -> Customize
+#Go to Macros, select this file, give it a Menu Text, and Accelerator (e.g. press Alt+N), and a Pixmap if you like, then click Add
+#Go to Toolbars, select Macros on the left, and Draft on the right, add the macro to the right.
+
+next()
+
