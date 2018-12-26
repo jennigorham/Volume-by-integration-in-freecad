@@ -6,7 +6,7 @@
 
 Paste the contents of the .py files into the python console (if python console is not visible, go View -> Panels -> Python Console)
 
-See next.FCMacro for instructions on creating a keyboard shortcut to step through the different views. Otherwise type `next()` into the python console.
+See [next.FCMacro](https://github.com/jennigorham/Volume-by-integration-in-freecad/blob/master/next.FCMacro) for instructions on creating a keyboard shortcut to step through the different views. Otherwise type `next()` into the python console.
 
 ## Question 5
 See [video](https://youtu.be/II97RPjbtuU?t=601).
