@@ -9,7 +9,7 @@ import math
 from FreeCAD import Base
 import Part
 import Draft
-from PyQt4.QtCore import QTimer
+from PySide import QtCore
 
 #open new document
 App.newDocument("Q13a")
@@ -107,7 +107,7 @@ sweep.ViewObject.Visibility=False
 
 ######### Animated sweep ##################
 #step the angle of the arc up gradually to produce sweep animation
-timer = QTimer() #can't just use time.sleep because it blocks the display updating
+timer = QtCore.QTimer() #can't just use time.sleep because it blocks the display updating
 angle = 0
 angle_step = 5
 
@@ -141,12 +141,12 @@ def make_shell(x):
 	outside_cyl.Placement = App.Placement(App.Vector(scale,-h,0),App.Rotation(App.Vector(1,0,0),270))
 	outside_cyl.Radius = scale - x
 	outside_cyl.Height = 2*h
-
+	
 	inside_cyl = App.ActiveDocument.addObject("Part::Cylinder","Cylinder")
 	inside_cyl.Placement = App.Placement(App.Vector(scale,-h,0),App.Rotation(App.Vector(1,0,0),270))
 	inside_cyl.Radius = max(scale - x - dx,offset) #radius should never be 0
 	inside_cyl.Height = 2*h
-
+	
 	#cut the outside cylinder with the inside cylinder
 	shell = App.activeDocument().addObject("Part::Cut","Cut")
 	shell.Base = outside_cyl
@@ -193,7 +193,7 @@ def flatten(theta): #theta = 0 is fully flat, theta = 180 is cylindrical shell
 	arc.Placement = App.Placement(App.Vector(scale,0,(180.0/theta-1)*(scale - x)),rotation)
 	doc.recompute()
 
-flat_timer = QTimer()
+flat_timer = QtCore.QTimer()
 
 def flatten_step(): #decrease theta
 	global angle,angle_step

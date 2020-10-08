@@ -9,7 +9,7 @@ import math
 from FreeCAD import Base
 import Part
 import Draft
-from PyQt4.QtCore import QTimer
+from PySide import QtCore
 
 #open new document
 App.newDocument("Q5")
@@ -137,7 +137,7 @@ sweep2.ViewObject.Visibility=False
 
 ######### Animated sweep ##################
 #step the angle of the arc up gradually to produce sweep animation
-timer = QTimer() #can't just use time.sleep because it blocks the display updating
+timer = QtCore.QTimer() #can't just use time.sleep because it blocks the display updating
 angle = 0
 angle_step = 5
 y_axis_rotation = False
@@ -247,7 +247,7 @@ def flatten(theta): #theta = 0 is fully flat, theta = 180 is cylindrical shell
 	arc.Placement = App.Placement(App.Vector(0,0,(180.0/theta-1)*x),App.Rotation(App.Vector(1,1,-1),120))
 	doc.recompute()
 
-flat_timer = QTimer()
+flat_timer = QtCore.QTimer()
 
 angle = 180
 
